@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.6.1">
+<meta name="generator" content="Asciidoctor 1.5.8">
 <meta name="description" content="Reference documentation for Netflix OSS Genie">
 <meta name="keywords" content="genie, netflix, documentation, big data, cloud, oss, open source software">
 <meta name="author" content="Tom Gianos">
@@ -698,7 +698,7 @@ b.conum * { color: inherit !important; }
 .literalblock pre, .listingblock pre { background: #333333; }
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="icon" href="https://netflix.github.io/genie/assets/img/nficon2016.png" />
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -718,7 +718,7 @@ b.conum * { color: inherit !important; }
 <span id="author" class="author">Tom Gianos</span><br>
 <span id="email" class="email"><a href="mailto:NetflixOSS@netflix.com">NetflixOSS@netflix.com</a></span><br>
 <span id="revnumber">version 4.0.0-SNAPSHOT,</span>
-<span id="revdate">2019-01-24</span>
+<span id="revdate">2019-01-29</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -997,7 +997,7 @@ refer to their documentation.
 </div>
 <div class="sect3">
 <h4 id="_added"><a class="anchor" href="#_added"></a><a class="link" href="#_added">2.3.1. Added</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1066,7 +1066,7 @@ whether the <code>maxSyncMessages</code> threshold has been reached or not</p></
 </div>
 <div class="sect3">
 <h4 id="_renamed"><a class="anchor" href="#_renamed"></a><a class="link" href="#_renamed">2.3.2. Renamed</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1125,7 +1125,7 @@ whether the <code>maxSyncMessages</code> threshold has been reached or not</p></
 </div>
 <div class="sect3">
 <h4 id="_removed"><a class="anchor" href="#_removed"></a><a class="link" href="#_removed">2.3.3. Removed</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1166,7 +1166,7 @@ the user wants at runtime via a Spring bean definition.</p></td>
 </div>
 <div class="sect3">
 <h4 id="_renamed_2"><a class="anchor" href="#_renamed_2"></a><a class="link" href="#_renamed_2">2.4.1. Renamed</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1352,14 +1352,14 @@ drop them yourself if they&#8217;re no longer needed.
 <div class="ulist">
 <ul>
 <li>
-<p>Upgrade Spring Boot to 2.0.7.RELEASE</p>
+<p>Upgrade Spring Boot to 2.1.2.RELEASE</p>
 </li>
 <li>
-<p>Upgrade to Spring Cloud Finchley.SR2 for cloud dependency management</p>
+<p>Upgrade to Spring Cloud Greenwich.RELEASE for cloud dependency management</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR2/">Reference Docs</a></p>
+<p><a href="http://cloud.spring.io/spring-cloud-static/Greenwich.RELEASE/">Reference Docs</a></p>
 </li>
 </ul>
 </div>
@@ -1578,7 +1578,7 @@ to Spring Integration Zookeeper. That library is now used.</p>
 <h3 id="_property_changes_3"><a class="anchor" href="#_property_changes_3"></a><a class="link" href="#_property_changes_3">5.3. Property Changes</a></h3>
 <div class="sect3">
 <h4 id="_added_2"><a class="anchor" href="#_added_2"></a><a class="link" href="#_added_2">5.3.1. Added</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1652,7 +1652,7 @@ time are deleted.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spring.session.store-type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The back end storage system for Spring to store HTTP session information. See
-<a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/#boot-features-session">Spring Boot Session</a>
+<a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/#boot-features-session">Spring Boot Session</a>
 for more information. Currently on classpath only none, hash_map, redis and jdbc will work.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hash_map</p></td>
 </tr>
@@ -1661,7 +1661,7 @@ for more information. Currently on classpath only none, hash_map, redis and jdbc
 </div>
 <div class="sect3">
 <h4 id="_changed_default_value"><a class="anchor" href="#_changed_default_value"></a><a class="link" href="#_changed_default_value">5.3.2. Changed Default Value</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1694,7 +1694,7 @@ for more information. Currently on classpath only none, hash_map, redis and jdbc
 </div>
 <div class="sect3">
 <h4 id="_renamed_3"><a class="anchor" href="#_renamed_3"></a><a class="link" href="#_renamed_3">5.3.4. Renamed</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2211,7 +2211,7 @@ all others are ignored.
 . ver:2.7.1
 . ver:2.7</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3411,7 +3411,7 @@ downloaded in the root job directory parallel to the run script so they are acce
 </div>
 </div>
 <div class="sect4">
-<h5 id="_strong_the_job_strong"><a class="anchor" href="#_strong_the_job_strong"></a><a class="link" href="#_strong_the_job_strong">6.3.2.2. <strong>The Job</strong></a></h5>
+<h5 id="_the_job"><a class="anchor" href="#_the_job"></a><a class="link" href="#_the_job">6.3.2.2. <strong>The Job</strong></a></h5>
 <div class="paragraph">
 <p>In this case the job was accepted by Genie for processing. Below is the actual job object containing fields the user
 might care about. Some are copied from the initial request (like tags) and some are added by Genie.</p>
@@ -4264,7 +4264,7 @@ decide which cluster to select. Currently <code>JavaScript</code> and <code>Groo
 <div class="paragraph">
 <p>Other properties:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -4315,7 +4315,7 @@ forces a timeout</p></td>
 <div class="paragraph">
 <p>The contract between the script and the Java code is as follows:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Script Inputs</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -4338,7 +4338,7 @@ forces a timeout</p></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Script Output</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -4495,7 +4495,7 @@ from a <code>.genie/</code> directory stored in the users home directory (e.g. <
 </div>
 <div class="paragraph">
 <p>For more details see the
-<a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/#boot-features-external-config">Spring Boot</a>
+<a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/#boot-features-external-config">Spring Boot</a>
 documentation on external configuration.</p>
 </div>
 </div>
@@ -4523,7 +4523,7 @@ Genie and it may be more overhead than you&#8217;re comfortable with.</p>
 <div class="paragraph">
 <p>Genie has a lot of available configuration options. For descriptions of specific properties you can see the
 <a href="#_properties">Properties</a> section below. Additionally if you want to know how to configure more parts of the application you
-should have a look at the <a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/">Spring Boot</a>
+should have a look at the <a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/">Spring Boot</a>
 docs as they will go in depth on how to configure the various Spring components used in Genie.</p>
 </div>
 <div class="sect3">
@@ -4531,7 +4531,7 @@ docs as they will go in depth on how to configure the various Spring components 
 <div class="paragraph">
 <p>Spring provides a mechanism of segregating parts of application configuration and activating them in certain
 conditions. This mechanism is known as
-<a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/#boot-features-profiles">profiles</a>. By
+<a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/#boot-features-profiles">profiles</a>. By
 default Genie will run with the <code>dev</code> profile activated. This means that all the properties in <code>application-dev.yml</code>
 will be appended to, or overwrite, the properties in <code>application.yml</code> which are the defaults. Changing the active
 profiles is easy you just need to change the property <code>spring.profiles.active</code> and pass in a comma separated list of
@@ -4785,15 +4785,15 @@ the <a href="#_properties">Properties</a> section below for the properties you&#
 <div class="paragraph">
 <p>This section describes the various properties that can be set to control the behavior of your Genie node and cluster.
 For more information on Spring properties you should see the
-<a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/">Spring Boot</a> reference documentation
-and the <a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR2/">Spring Cloud</a> documentation.
+<a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/">Spring Boot</a> reference documentation
+and the <a href="http://cloud.spring.io/spring-cloud-static/Greenwich.RELEASE/">Spring Cloud</a> documentation.
 The Spring properties described here are ones that we have overridden from Spring defaults.</p>
 </div>
 <div class="sect2">
 <h3 id="_default_properties"><a class="anchor" href="#_default_properties"></a><a class="link" href="#_default_properties">9.1. Default Properties</a></h3>
 <div class="sect3">
 <h4 id="_genie_properties"><a class="anchor" href="#_genie_properties"></a><a class="link" href="#_genie_properties">9.1.1. Genie Properties</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -5271,9 +5271,9 @@ to the number of CPU cores x 2 + 1</p></td>
 <div class="sect3">
 <h4 id="_spring_properties"><a class="anchor" href="#_spring_properties"></a><a class="link" href="#_spring_properties">9.1.2. Spring Properties</a></h4>
 <div class="paragraph">
-<p><a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/#common-application-properties">Spring Properties</a></p>
+<p><a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/#common-application-properties">Spring Properties</a></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -5458,7 +5458,7 @@ returned</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spring.session.store-type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The back end storage system for Spring to store HTTP session information. See
-<a href="http://docs.spring.io/spring-boot/docs/2.0.7.RELEASE/reference/htmlsingle/#boot-features-session">Spring Boot Session</a>
+<a href="http://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/htmlsingle/#boot-features-session">Spring Boot Session</a>
 for more information. Currently on classpath only none, redis and jdbc will work.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 </tr>
@@ -5470,7 +5470,7 @@ for more information. Currently on classpath only none, redis and jdbc will work
 <div class="paragraph">
 <p>Properties set by default to manipulate various <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a> libraries.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -5522,7 +5522,7 @@ See <a href="https://cloud.spring.io/spring-cloud-aws/">Spring Cloud AWS</a> for
 </div>
 <div class="sect3">
 <h4 id="_grpc_server_properties"><a class="anchor" href="#_grpc_server_properties"></a><a class="link" href="#_grpc_server_properties">9.1.4. gRPC Server properties</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -5552,7 +5552,7 @@ See <a href="https://cloud.spring.io/spring-cloud-aws/">Spring Cloud AWS</a> for
 <h3 id="_profile_specific_properties"><a class="anchor" href="#_profile_specific_properties"></a><a class="link" href="#_profile_specific_properties">9.2. Profile Specific Properties</a></h3>
 <div class="sect3">
 <h4 id="_prod_profile"><a class="anchor" href="#_prod_profile"></a><a class="link" href="#_prod_profile">9.2.1. Prod Profile</a></h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -5651,7 +5651,7 @@ collection systems (Atlas, Datadog, Graphite, Ganglia, etc). See <a href="http:/
 ships with no backend system compiled in. It will have to be added if one is desired otherwise metrics are just
 published within the local JVM and available on the Actuator <code>/metrics</code> endpoint.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 7.1428%;">
 <col style="width: 71.4285%;">
@@ -6205,11 +6205,11 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <div id="footer">
 <div id="footer-text">
 Version 4.0.0-SNAPSHOT<br>
-Last updated 2019-01-24 23:32:48 UTC
+Last updated 2019-01-29 19:53:38 UTC
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
 <script>hljs.initHighlighting()</script>
 </body>
 </html>
