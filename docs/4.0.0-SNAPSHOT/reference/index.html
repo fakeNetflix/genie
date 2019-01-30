@@ -718,7 +718,7 @@ b.conum * { color: inherit !important; }
 <span id="author" class="author">Tom Gianos</span><br>
 <span id="email" class="email"><a href="mailto:NetflixOSS@netflix.com">NetflixOSS@netflix.com</a></span><br>
 <span id="revnumber">version 4.0.0-SNAPSHOT,</span>
-<span id="revdate">2019-01-29</span>
+<span id="revdate">2019-01-30</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1041,6 +1041,18 @@ management endpoints. Switched from default <code>/actuator</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">/admin</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.s3.buckets.[bucketName].roleARN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For the bucket with name <code>bucketName</code> the ARN of the role to assume to read/write to that bucket. If a bucket is used
+that isn&#8217;t listed in this map the default credentials configured will be used</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.s3.buckets.[bucketName].region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The AWS region the bucket with <code>bucketName</code> is in. Clients to talk to this bucket will be created in this region. If
+no value is specified the bucket is assumed to be in the same region as the Genie process.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.grpc.server.enabled</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to start the gRPC server and services during server startup</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
@@ -1140,8 +1152,11 @@ whether the <code>maxSyncMessages</code> threshold has been reached or not</p></
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.credentials.file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No longer necessary as <code>cloud.aws.credentials.useDefaultAwsCredentialsChain</code> is enabled by default an other Spring
-Cloud AWS properties can be used to configure more specifically other than to assume role which still uses
-<code>genie.aws.credentials.role</code>.</p></td>
+Cloud AWS properties can be used to configure more specifically.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.credentials.role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replaced with <code>genie.aws.s3.buckets.[bucketName].roleARN</code> for more specific control</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spring.jackson.date-format</p></td>
@@ -1154,6 +1169,10 @@ for <code>Instant</code> serialization/deserialization.</p></td>
 balancer&#8217;s. This logic is more a framework or execution configuration than anything specific to the class itself. It
 shouldn&#8217;t know how it&#8217;s used. The new mechanism is to provide an <code>@Order</code> annotation on beans that fit in the order
 the user wants at runtime via a Spring bean definition.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.jobs.cleanup.deleteArchiveFile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Archival is now done in a flat structure to the destination location</p></td>
 </tr>
 </tbody>
 </table>
@@ -4808,6 +4827,18 @@ The Spring properties described here are ones that we have overridden from Sprin
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.s3.buckets.[bucketName].roleARN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For the bucket with name <code>bucketName</code> the ARN of the role to assume to read/write to that bucket. If a bucket is used
+that isn&#8217;t listed in this map the default credentials configured will be used</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.s3.buckets.[bucketName].region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The AWS region the bucket with <code>bucketName</code> is in. Clients to talk to this bucket will be created in this region. If
+no value is specified the bucket is assumed to be in the same region as the Genie process.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.aws.credentials.role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The AWS role ARN to assume when connecting to S3. If this is set Genie will create a credentials provider that will
 attempt to assume this role on the host Genie is running on</p></td>
@@ -4857,11 +4888,6 @@ Health of the system is marked unhealthy if the CPU load of a system goes beyond
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.http.read.timeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The number of milliseconds before HTTP calls between Genie nodes should time out on attempting to read data</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">genie.jobs.cleanup.deleteArchiveFile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to delete the job directory zip after it has been backed up to save disk space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">genie.jobs.cleanup.deleteDependencies</p></td>
@@ -6205,7 +6231,7 @@ published within the local JVM and available on the Actuator <code>/metrics</cod
 <div id="footer">
 <div id="footer-text">
 Version 4.0.0-SNAPSHOT<br>
-Last updated 2019-01-29 19:53:38 UTC
+Last updated 2019-01-30 06:10:02 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
